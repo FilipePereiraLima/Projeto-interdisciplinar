@@ -19,3 +19,6 @@ let connect = async function () {
 };
 
 module.exports = { connect };
+
+
+//sera aqui que ira fazer a ligação com o banco de dados

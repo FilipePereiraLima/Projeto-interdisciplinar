@@ -1,4 +1,4 @@
-CREATE TABLE produto {
+CREATE TABLE produtos {
      codigo serial,
      titulo text,
      data_cadastro date,
@@ -8,9 +8,9 @@ CREATE TABLE produto {
      
 }
 
-INSERT INTO produto (titulo, data_cadastro, preco, descrição, imagem)
+INSERT INTO produtos (titulo, data_cadastro, preco, descrição, imagem)
 VALUES
-    	('Deck de Magic the Gathering', '20210607', 25, 'Deck pronto unica cor vermelho agro ', 'imagem/deck1.png' ),
+    ('Deck de Magic the Gathering', '20210607', 25, 'Deck pronto unica cor vermelho agro ', 'imagem/deck1.png' ),
 	('Deck de Magic the Gathering', '20210607', 25, 'Deck pronto unica cor preto toque mortifero', 'imagemaqui' ),
 	('Deck de Magic the Gathering', '20210607', 25, 'Deck pronto unica cor branco aura', 'imagemaqui' ),
 	('Deck de Magic the Gathering', '20210607', 25, 'Deck pronto unica cor branco marcador', 'imagemaqui' ),
