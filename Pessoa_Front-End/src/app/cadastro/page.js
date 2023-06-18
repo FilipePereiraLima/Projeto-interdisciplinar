@@ -67,10 +67,12 @@ export default function Cadastro() {
 </nav>
 
         <div className={"flex flex-col justify-center items-center mt-40"}>
+            <h1 className="flex flex-col justify-center items-center text-3xl font-bold mb-4 ">Cadastrar Produto</h1>
+           
             <form  onSubmit={cadastrar}>
 
                 <input
-                    className="text-lg mb-2 border w-full h-full border-blue-900 p-4 rounded w-80 font-mono"
+                    className="text-lg mb-2 border w-full h-full border-blue-900 p-4 rounded w-80"
                     type="text"
                     placeholder='Insira o titulo do produto:'
                     Titulo="Titulo"
@@ -78,7 +80,7 @@ export default function Cadastro() {
                 /><br/>
 
                 <input
-                    className="text-lg  mb-2 border w-full h-full border-blue-900 p-4 rounded w-80 font-mono"
+                    className="text-lg  mb-2 border w-full h-full border-blue-900 p-4 rounded w-80"
                     type="date"
                     placeholder='Insira a data de cadastro do produto:'
                     Titulo="Datadecadastro"
@@ -86,7 +88,7 @@ export default function Cadastro() {
                 /><br/>
 
                 <input
-                    className="text-lg mb-2 border w-full h-full border-blue-900 p-4 rounded w-80 font-mono"
+                    className="text-lg mb-2 border w-full h-full border-blue-900 p-4 rounded w-80"
                     type="integer"
                     placeholder='Insira o preço do produto:'
                     Titulo="Preco"
@@ -94,7 +96,7 @@ export default function Cadastro() {
                 /><br/>
 
                 <input
-                    className="text-lg mb-2 border w-full h-full border-blue-900 p-4 rounded w-80 font-mono"
+                    className="text-lg mb-2 border w-full h-full border-blue-900 p-4 rounded w-80"
                     type="text"
                     placeholder='Insira a descriçao do produto:'
                     Titulo="Descricao"
@@ -102,15 +104,15 @@ export default function Cadastro() {
                 /><br/>
 
                 <input
-                    className="text-lg mb-2 border w-full h-full border-blue-900 p-4 rounded w-80 font-mono"
+                    className="text-lg mb-2 border w-full h-full border-blue-900 p-4 rounded w-80"
                     type="text"
                     placeholder='Insira a imagem do produto:'
                     Titulo="Imagem"
                     onChange={e => setImagem(e.target.value)}
                 /><br/>
-                <button className="text-lg mb-2 border border-blue-900 p-4 rounded w-36 mx-2 font-mono" type='submit'>Cadastrar</button>
+                <button className="text-lg mb-2 border border-blue-900 p-4 rounded w-36 mx-2" type='submit'>Cadastrar</button>
                 
-                    <button className="text-lg mb-2 border border-blue-900 p-4 rounded w-36 mx-2 font-mono"><a href='/'>Voltar</a></button>
+                    <button className="text-lg mb-2 border border-blue-900 p-4 rounded w-36 mx-2"><a href='/'>Voltar</a></button>
                 
             </form>
         </div>
