@@ -66,27 +66,27 @@ export default function Cadastro() {
   </div>
 </nav>
 
-        <div className={"flex flex-col justify-center items-center mt-60"}>
+        <div className={"flex flex-col justify-center items-center mt-40"}>
             <form  onSubmit={cadastrar}>
 
                 <input
-                    className="text-lg font-bold mb-2 border w-full h-full border-blue-900 p-4 rounded"
+                    className="text-lg mb-2 border w-full h-full border-blue-900 p-4 rounded w-80 font-mono"
                     type="text"
-                    placeholder='insira o titulo do produto:'
+                    placeholder='Insira o titulo do produto:'
                     Titulo="Titulo"
                     onChange={e => setTitulo(e.target.value)}
                 /><br/>
 
                 <input
-                    className="text-lg font-bold mb-2"
+                    className="text-lg  mb-2 border w-full h-full border-blue-900 p-4 rounded w-80 font-mono"
                     type="date"
-                    placeholder='insira a data de cadastro do produto:'
+                    placeholder='Insira a data de cadastro do produto:'
                     Titulo="Datadecadastro"
                     onChange={e => setDatadecadastro(e.target.value)}
                 /><br/>
 
                 <input
-                    className="text-lg font-bold mb-2"
+                    className="text-lg mb-2 border w-full h-full border-blue-900 p-4 rounded w-80 font-mono"
                     type="integer"
                     placeholder='Insira o preço do produto:'
                     Titulo="Preco"
@@ -94,7 +94,7 @@ export default function Cadastro() {
                 /><br/>
 
                 <input
-                    className="text-lg font-bold mb-2"
+                    className="text-lg mb-2 border w-full h-full border-blue-900 p-4 rounded w-80 font-mono"
                     type="text"
                     placeholder='Insira a descriçao do produto:'
                     Titulo="Descricao"
@@ -102,16 +102,16 @@ export default function Cadastro() {
                 /><br/>
 
                 <input
-                    className="text-lg font-bold mb-2"
+                    className="text-lg mb-2 border w-full h-full border-blue-900 p-4 rounded w-80 font-mono"
                     type="text"
                     placeholder='Insira a imagem do produto:'
                     Titulo="Imagem"
                     onChange={e => setImagem(e.target.value)}
                 /><br/>
-                <button type='submit'>Cadastrar</button>
-                <div>
-                    <a href='/'>Voltar</a>
-                </div>
+                <button className="text-lg mb-2 border border-blue-900 p-4 rounded w-36 mx-2 font-mono" type='submit'>Cadastrar</button>
+                
+                    <button className="text-lg mb-2 border border-blue-900 p-4 rounded w-36 mx-2 font-mono"><a href='/'>Voltar</a></button>
+                
             </form>
         </div>
         </main>
