@@ -69,7 +69,8 @@ export default function Cadastro() {
 </nav>
 
         <div className={"flex flex-col justify-center items-center mt-40"}>
-            <h1 className="flex flex-col justify-center items-center text-3xl font-bold mb-4 ">Cadastrar Produto</h1>
+          <div className={"bg-[#111827] px-4 py-6 rounded-2xl"}>
+            <h1 className="text-white flex flex-col justify-center items-center text-3xl font-bold mb-4 ">Cadastrar Produto</h1>
            
             <form  onSubmit={cadastrar}>
 
@@ -121,12 +122,13 @@ export default function Cadastro() {
                     value={imagem}
                     onChange={e => setImagem(e.target.value)}
                 /><br/>
-                <button className="text-lg mb-2 border border-blue-900 p-4 rounded w-36 mx-2" type='submit'>Cadastrar</button>
-                
-                    <button className="text-lg mb-2 border border-blue-900 p-4 rounded w-36 mx-2"><a href='/'>Voltar</a></button>
+                <button className=" text-lg mt-2 border border-[#152848] p-4 rounded w-36 mx-2 hover:bg-blue-900 text-white font-bold bg-[#152848] " type='submit'>Cadastrar</button>
+                 
+                    <button className="text-lg mt-2 border border-[#152848] p-4 rounded w-36 mx-2 hover:bg-blue-900 text-white font-bold bg-[#152848]"><a href='/'>Voltar</a></button>
                 
             </form>
+          </div>
         </div>
-        </main>
+      </main>
     );
 }
