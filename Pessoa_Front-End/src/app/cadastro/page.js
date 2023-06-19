@@ -26,7 +26,7 @@ export default function Cadastro() {
         }
         alert('foi cadastrado com sucesso')
 
-        const produtoJson = JSON.stringify(produtos);
+        const produtoJson = JSON.stringify(produto);
         fetch("http://localhost:3003/produto", {
             method: "POST",
             headers: { "content-Type": "application/json" },
@@ -76,28 +76,22 @@ export default function Cadastro() {
                 <input
                     className="text-lg mb-2 border w-full h-full border-blue-900 p-4 rounded w-80"
                     type="text"
-<<<<<<< HEAD
                     placeholder='insira o titulo do produto:'
                     id="titulo"
                     value={titulo}
-=======
-                    placeholder='Insira o titulo do produto:'
                     Titulo="Titulo"
->>>>>>> 83b52c1d78438d422d8613fa686f29c80006d094
+
                     onChange={e => setTitulo(e.target.value)}
                 /><br/>
 
                 <input
                     className="text-lg  mb-2 border w-full h-full border-blue-900 p-4 rounded w-80"
                     type="date"
-<<<<<<< HEAD
                     placeholder='insira a data de cadastro do produto:'
                     id="data_cadastro"
                     value={datadecadastro}
-=======
-                    placeholder='Insira a data de cadastro do produto:'
                     Titulo="Datadecadastro"
->>>>>>> 83b52c1d78438d422d8613fa686f29c80006d094
+
                     onChange={e => setDatadecadastro(e.target.value)}
                 /><br/>
 
