@@ -54,7 +54,7 @@ export default async function Home() {
               <p className="text-lg font-bold mb-2 text-white">{produtos.titulo}</p>
               <p className="mb-2 text-gray-300">{produtos.descricao}</p>
               <p className="mb-2 text-gray-300">{produtos.data_cadastro}</p>          
-              <Link href={`/produto/${produtos.id}`} className="inline-block mt-2 bg-[#152848] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ms-8">Remover</Link>
+              <Link href={`/produto/${produtos.codigo}`} className="inline-block mt-2 bg-[#152848] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ms-8">Remover</Link>
               <Link href={`/produto/${produtos.codigo}`} className="inline-block mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">saiba mais</Link>
             </div>
           </div>
