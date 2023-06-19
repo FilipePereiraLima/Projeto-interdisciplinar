@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 export default async function Produto({ params }) {
     const router = useRouter();
 
-    const req = await fetch("http://localhost:3003/produtos", + params.codigo, {
+    const req = await fetch("http://localhost:3003/produtos" + params.codigo, {
         method: "GET",
         cache: "no-cache",
         headers: { 'content-type': 'application/json' },
@@ -27,16 +27,18 @@ export default async function Produto({ params }) {
             alert("Ocorreu um erro" + error)
         }
     }
-
-
-    return (
+ return (
+    
         <div>
-            <p>{produto.nome}</p>
-            <p>{produto.idade}</p>
-            <p>{produto.uf}</p>
+            <p>{produtos.titulo}</p>
+            <p>{produtos.descricao}</p>
+            <p>{produtos.imagem}</p>
             <button onClick={e => e.preventDefault(remover())}>REMOVER</button>
 
         </div>
 
-    )
+
+ )
+        
+
 }
