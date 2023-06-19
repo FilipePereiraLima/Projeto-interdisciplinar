@@ -15,6 +15,7 @@ export default async function Produto({ params }) {
     const produto = await req.json();
 
 
+    
     const remover = async () => {
         const codigoJson = JSON.stringify({ codigo: params.codigo });
         try {

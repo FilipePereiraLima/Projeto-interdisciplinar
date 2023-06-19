@@ -8,7 +8,7 @@ CREATE TABLE produtos (
      
 )
 
-INSERT INTO produtos (titulo, data_cadastro, preco, descrição, imagem)
+INSERT INTO produtos (titulo, data_cadastro, preco, descricao, imagem)
 VALUES
     ('Deck de Magic the Gathering', '20210607', 25, 'Deck pronto unica cor vermelho agro', 'https://www.playeasy.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/e/deck-3.jpg'),
 	('Deck de Magic the Gathering', '20210607', 25, 'Deck pronto unica cor preto toque mortifero', 'https://m.media-amazon.com/images/I/619gFwngEOL._AC_UF894,1000_QL80_.jpg'),
