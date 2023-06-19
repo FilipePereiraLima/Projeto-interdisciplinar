@@ -23,7 +23,7 @@ app.get('/produtos', async function(req, res){
 
 app.post('/produtos', async function(req, res){
   try {
-    var produto = await Produto.selectOne(req.body.id);
+    var produto = await Produto.insert(req.body);
     res.json(produto.rows[0]);
   } catch (error) {
     console.error('Erro ao buscar produtos:', error);

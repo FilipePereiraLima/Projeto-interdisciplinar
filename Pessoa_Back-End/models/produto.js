@@ -11,11 +11,11 @@ class Produto {
       throw error;
     }
   }
-  static async selectOne(id) {
+  static async selectOne(codigo) {
     try {
       const connect = await db.connect();
-      const sql = "SELECT *FROM produtos WHERE id=$1";
-      return await connect.query(sql,[id]);
+      const sql = "SELECT *FROM produtos WHERE codigo=$1";
+      return await connect.query(sql,[codigo]);
     } catch (error) {
       console.error('Erro em select:', error);
       throw error;
@@ -25,8 +25,8 @@ class Produto {
   static async insert(data) {
     try {
       const connect = await db.connect();
-      const sql = "INSERT INTO produtos(nome, idade, uf) VALUES ($1, $2, $3) RETURNING id, nome, idade, uf;";
-      const values = [data.nome, data.idade, data.uf];
+      const sql = "INSERT INTO produtos(titulo, data_cadastro, preco, descrição, imagem) VALUES ($1, $2, $3, $4, 5$) RETURNING codigo, titulo, data_cadastro, preco, descrição, imagem;";
+      const values = [data.titulo, data.data_cadastro, data.preco, data.descrição, data.imagem];
       return await connect.query(sql, values);
     } catch (error) {
       console.error('Erro em insert:', error);
@@ -34,11 +34,11 @@ class Produto {
     }
   }
 
-  static async update(id, data) {
+  static async update(codigo, data) {
     try {
       const connect = await db.connect();
       const sql = "";
-      const values = [data.nome, data.idade, data.uf, id];
+      const values = [data.titulo, data.data_cadastro, data.preco, codigo];
       return await connect.query(sql, values);
     } catch (error) {
       console.error('Erro em update:', error);
@@ -46,11 +46,11 @@ class Produto {
     }
   }
 
-  static async delete(id) {
+  static async delete(codigo) {
     try {
       const connect = await db.connect();
-      const sql = "DELETE FROM produtos WHERE id=$1";
-      return await connect.query(sql, [id]);
+      const sql = "DELETE FROM produtos WHERE codigo=$1";
+      return await connect.query(sql, [codigo]);
     } catch (error) {
       console.error('Erro em delete:', error);
       throw error;

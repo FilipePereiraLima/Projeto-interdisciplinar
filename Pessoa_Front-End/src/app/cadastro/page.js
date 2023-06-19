@@ -4,27 +4,29 @@ import styles from '../page.module.css'
 import { useRouter } from 'next/navigation'
 
 export default function Cadastro() {
-    const route = useRouter();
+    const route = useRouter('');
     
-    const [Titulo, setTitulo] = useState();
-    const [Datadecadastro, setDatadecadastro] = useState();
+    const [titulo, setTitulo] = useState('');
+    const [datadecadastro, setDatadecadastro] = useState('');
 
-    const [Preco, setPreco] = useState();
-    const [Descricao, setDescricao] = useState();
+    const [preco, setPreco] = useState('');
+    const [descricao, setDescricao] = useState('');
 
-    const [Imagem, setImagem] = useState();
+    const [imagem, setImagem] = useState('');
 
     const cadastrar = (e) => {
         e.preventDefault()
         
-        const produto = {
-            Titulo: Titulo,
-            Datadecadastro: Datadecadastro,
-            Preco: Preco,
-            Descricao: Descricao,
-            Imagem: Imagem
+        const produtos = {
+            titulo: titulo,
+            data_cadastro: datadecadastro,
+            preco: preco,
+            descrição: descricao,
+            imagem: imagem
         }
-        const produtoJson = JSON.stringify(produto);
+        alert('foi cadastrado com sucesso')
+
+        const produtoJson = JSON.stringify(produtos);
         fetch("http://localhost:3003/produto", {
             method: "POST",
             headers: { "content-Type": "application/json" },
@@ -73,7 +75,8 @@ export default function Cadastro() {
                     className="text-lg font-bold mb-2 border w-full h-full border-blue-900 p-4 rounded"
                     type="text"
                     placeholder='insira o titulo do produto:'
-                    Titulo="Titulo"
+                    id="titulo"
+                    value={titulo}
                     onChange={e => setTitulo(e.target.value)}
                 /><br/>
 
@@ -81,7 +84,8 @@ export default function Cadastro() {
                     className="text-lg font-bold mb-2"
                     type="date"
                     placeholder='insira a data de cadastro do produto:'
-                    Titulo="Datadecadastro"
+                    id="data_cadastro"
+                    value={datadecadastro}
                     onChange={e => setDatadecadastro(e.target.value)}
                 /><br/>
 
@@ -89,7 +93,8 @@ export default function Cadastro() {
                     className="text-lg font-bold mb-2"
                     type="integer"
                     placeholder='Insira o preço do produto:'
-                    Titulo="Preco"
+                    id="preco"
+                    value={preco}
                     onChange={e => setPreco(e.target.value)}
                 /><br/>
 
@@ -97,7 +102,8 @@ export default function Cadastro() {
                     className="text-lg font-bold mb-2"
                     type="text"
                     placeholder='Insira a descriçao do produto:'
-                    Titulo="Descricao"
+                    id="descrição"
+                    value={descricao}
                     onChange={e => setDescricao(e.target.value)}
                 /><br/>
 
@@ -105,7 +111,8 @@ export default function Cadastro() {
                     className="text-lg font-bold mb-2"
                     type="text"
                     placeholder='Insira a imagem do produto:'
-                    Titulo="Imagem"
+                    id="imagem"
+                    value={imagem}
                     onChange={e => setImagem(e.target.value)}
                 /><br/>
                 <button type='submit'>Cadastrar</button>
