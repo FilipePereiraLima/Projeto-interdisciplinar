@@ -54,7 +54,7 @@ export default async function Home() {
 
               <img src={produtos.imagem} className="w-32 h-32 object-cover mx-auto mb-4" />
               <p className="text-lg font-bold mb-2">{produtos.titulo}</p>
-              <p className="mb-2">{produtos.descrição}</p>
+              <p className="mb-2">{produtos.descricao}</p>
               <p className="mb-2">{produtos.data_cadastro}</p>
               
 
