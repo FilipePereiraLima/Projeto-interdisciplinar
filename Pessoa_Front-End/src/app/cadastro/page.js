@@ -17,11 +17,11 @@ export default function Cadastro() {
     const cadastrar = (e) => {
         e.preventDefault()
         
-        const produtos = {
+        const produto = {
             titulo: titulo,
             data_cadastro: datadecadastro,
             preco: preco,
-            descrição: descricao,
+            descricao: descricao,
             imagem: imagem
         }
         alert('foi cadastrado com sucesso')
@@ -109,7 +109,7 @@ export default function Cadastro() {
                     className="text-lg mb-2 border w-full h-full border-blue-900 p-4 rounded w-80"
                     type="text"
                     placeholder='Insira a descriçao do produto:'
-                    id="descrição"
+                    id="descricao"
                     value={descricao}
                     onChange={e => setDescricao(e.target.value)}
                 /><br/>
