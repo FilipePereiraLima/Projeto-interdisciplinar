@@ -53,8 +53,7 @@ app.post('/produto', async function(req,res){
 
 app.delete('/produtos', async function(req, res){
   try {
-    console.log(req.body.id)
-    var produto = await Produto.delete(req.body.id);
+    var produto = await Produto.delete(req.body.codigo);
     res.json(produto.rows);
   } catch (error) {
     console.error('Erro ao atualizar produto:', error);
