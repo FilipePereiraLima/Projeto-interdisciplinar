@@ -21,7 +21,17 @@ app.get('/produtos', async function(req, res){
   }
 });
 
-app.post('/produto', async function(req,res){
+app.post('/produto', async function(req, res){
+  try {
+    var produtos = await Produto.selectOne(req.body.codigo);
+    res.json(produtos.rows[0]);
+  } catch (error) {
+    console.error('Erro ao buscar os produtos:', error);
+    res.status(500).json({ error: 'Ocorreu um erro ao buscar o produto' });
+  }
+});
+
+app.post('/produtos', async function(req,res){
   try{
     var produto = req.body
     var produto = await Produto.insert(produto);
@@ -30,7 +40,7 @@ app.post('/produto', async function(req,res){
     console.log("error")
   }
   try {
-    var produtos = await Produto.insert(req.body);
+    var produtos = await Produto.insert(req.body.codigo);
     res.json(produtos.rows[0]);
   } catch (error) {
     console.error('Erro ao buscar produtos:', error);
@@ -47,6 +57,8 @@ app.delete('/produtos', async function(req, res){
     res.status(500).json({ error: 'Ocorreu um erro ao atualizar produto' });
   }
 });
+
+
 
 
 app.listen(3003, function() {

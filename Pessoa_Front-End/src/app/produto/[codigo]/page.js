@@ -6,7 +6,7 @@ export default async function Produto({ params }) {
     const codigo = {codigo: parseInt(params.codigo)};
     const codigoJson = JSON.stringify(codigo);
 
-    const req = await fetch("http://localhost:3003/produtos", {
+    const req = await fetch("http://localhost:3003/produto", {
         method: "POST",
         cache: "no-cache",
         headers: { 'content-type': 'application/json' },
