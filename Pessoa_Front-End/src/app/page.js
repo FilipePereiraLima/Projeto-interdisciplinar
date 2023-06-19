@@ -10,7 +10,6 @@ export default async function Home() {
   return (
     <main>
 
-
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
 
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -56,12 +55,7 @@ export default async function Home() {
               <p className="mb-2 text-gray-300">{produtos.data_cadastro}</p>          
 
               <Link href={`/produto/${produtos.codigo}`} className="inline-block mt-2 bg-[#152848] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ms-8">Remover</Link>
-
-
-              <Link href={`/produto/${produtos.id}`} className="inline-block mt-2 bg-[#152848] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ms-4">Saiba Mais</Link>
-
-              <Link href={`/produto/${produtos.codigo}`} className="inline-block mt-2 bg-[#152848] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ms-8">Remover</Link>
-
+              <Link href={`/produto/${produtos.codigo}`} className="inline-block mt-2 bg-[#152848] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ms-4">Saiba Mais</Link>
             </div>
           </div>
         ))}
