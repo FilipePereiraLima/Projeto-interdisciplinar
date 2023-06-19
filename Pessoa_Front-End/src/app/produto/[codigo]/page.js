@@ -1,9 +1,9 @@
 'use client'
-
 import { useRouter } from "next/navigation";
 
 export default async function Produto({ params }) {
     const router = useRouter();
+  
 
     const req = await fetch("http://localhost:3003/produtos" + params.codigo, {
         method: "GET",
@@ -14,31 +14,26 @@ export default async function Produto({ params }) {
     const produtos = res[0];
 
 
-    const remover = () => {
-        const codigoJson= JSON.stringify({codigo: produtos.codigo})
+    const remover = async () => {
+        const codigoJson = JSON.stringify({ codigo: params.codigo });
         try {
-            fetch("http://localhost:3003/produtos", {
+            await fetch(`http://localhost:3003/produtos/${params.codigo}`, {
                 method: "DELETE",
-                headers: { 'content-type': 'application/json' },
+                headers: { 'Content-Type': 'application/json' },
                 body: codigoJson
-            })
+            });
             router.push("/");
         } catch (error) {
-            alert("Ocorreu um erro" + error)
+            alert("Ocorreu um erro: " + error);
         }
-    }
- return (
-    
+    };
+
+    return (
         <div>
             <p>{produtos.titulo}</p>
             <p>{produtos.descricao}</p>
             <p>{produtos.imagem}</p>
-            <button onClick={e => e.preventDefault(remover())}>REMOVER</button>
-
+            <button onClick={remover}>REMOVER</button>
         </div>
-
-
- )
-        
-
+    );
 }
