@@ -22,18 +22,10 @@ app.get('/produtos', async function(req, res){
 });
 
 app.post('/produtos', async function(req,res){
-  try{
-    console.log(req.body.titulo)
-
-    var produto = req.body
-    var produto = await Produto.insert(produto);
-    res.json(produto.rows)
-  }catch(error){
-    console.log("error")
-  }
+  
   try {
-    var produtos = await Produto.insert(req.body.codigo);
-    res.json(produtos.rows[0]);
+    var produtos = await Produto.insert(req.body);
+    res.json(produtos.rows);
   } catch (error) {
     console.error('Erro ao buscar produtos:', error);
     res.status(500).json({ error: 'Ocorreu um erro ao buscar produtos' });
