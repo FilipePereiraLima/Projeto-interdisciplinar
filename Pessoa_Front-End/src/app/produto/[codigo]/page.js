@@ -6,7 +6,7 @@ export default async function Produto({ params }) {
     const codigo = {codigo: parseInt(params.codigo)};
     const codigoJson = JSON.stringify(codigo);
 
-    const req = await fetch("http://localhost:3003/produto", {
+    const req = await fetch("https://projeto-interdisciplinar-gamma.vercel.app/produto", {
         method: "POST",
         cache: "no-cache",
         headers: { 'content-type': 'application/json' },
@@ -19,7 +19,7 @@ export default async function Produto({ params }) {
     const remover = async () => {
         const codigoJson = JSON.stringify({ codigo: params.codigo });
         try {
-            fetch("http://localhost:3003/produtos" , {
+            fetch("https://projeto-interdisciplinar-gamma.vercel.app/produtos" , {
                 method: "DELETE",
                 headers: { 'Content-Type': 'application/json' },
                 body: codigoJson

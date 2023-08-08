@@ -27,7 +27,7 @@ export default function Cadastro() {
         alert('foi cadastrado com sucesso')
 
         const produtoJson = JSON.stringify(produto);
-        fetch("http://localhost:3003/produtos", {
+        fetch("https://projeto-interdisciplinar-gamma.vercel.app/produtos", {
             method: "POST",
             headers: { "content-Type": "application/json" },
             body: produtoJson
